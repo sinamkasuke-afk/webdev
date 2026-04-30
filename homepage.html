@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>karINderyOUT Homepage</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>kar<span>INdery</span>OUT</h1>
+    <button onclick="openLogin()">Sign In</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Smart Attendance & Leave Management System</h2>
+      <p>
+        A simple web system for employee time in/out, leave requests,
+        attendance monitoring, and admin reports.
+      </p>
+      <button onclick="openLogin()">Get Started</button>
+    </div>
+
+    <div class="feature-card">
+      <h3>System Features</h3>
+      <p>✔ Time In / Time Out</p>
+      <p>✔ View Time Records</p>
+      <p>✔ Leave Request</p>
+      <p>✔ Attendance List</p>
+      <p>✔ Employee Reports</p>
+    </div>
+  </section>
+
+  <div id="loginModal" class="modal">
+    <div class="login-box">
+      <span class="close" onclick="closeLogin()">×</span>
+
+      <h2>Sign In</h2>
+      <p>Choose your account type</p>
+
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+
+      <button onclick="loginEmployee()">Login as Employee</button>
+      <button onclick="loginAdmin()" class="admin-btn">Login as Admin</button>
+    </div>
+  </div>
+
+  <script src="homepage.js"></script>
+</body>
+</html>

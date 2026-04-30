@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Request</title>
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+    <h2>Employee</h2>
+    <a href="employee.html">Time In / Time Out</a>
+    <a href="view-records.html">View Time Records</a>
+    <a class="active">Leave Request</a>
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <main class="content">
+    <h1>Leave Request</h1>
+
+    <div class="card">
+      <h2>Submit Leave Request</h2>
+
+      <input type="text" placeholder="Leave Type (Vacation, Sick, etc.)">
+
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <input type="date">
+        <input type="date">
+      </div>
+
+      <textarea placeholder="Reason"></textarea>
+
+      <button class="blue">Submit Request</button>
+    </div>
+
+    <div class="card">
+      <h2>My Leave Requests</h2>
+
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>Vacation</td>
+          <td>May 24</td>
+          <td>May 25</td>
+          <td style="color:orange;">Pending</td>
+        </tr>
+
+        <tr>
+          <td>Sick</td>
+          <td>May 10</td>
+          <td>May 10</td>
+          <td style="color:green;">Approved</td>
+        </tr>
+
+        <tr>
+          <td>Personal</td>
+          <td>Apr 30</td>
+          <td>May 1</td>
+          <td style="color:red;">Rejected</td>
+        </tr>
+
+      </table>
+    </div>
+
+  </main>
+
+</div>
+
+<script src="employee.js"></script>
+</body>
+</html>

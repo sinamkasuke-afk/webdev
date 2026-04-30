@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Employee</h2>
+
+    <a href="employee.html" class="active">Time In / Time Out</a>
+    <a href="view-records.html">View Time Records</a>
+    <a href="leave-request.html">Leave Request</a>
+
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <h1>Employee Dashboard</h1>
+
+    <div class="card">
+      <h2>Time In and Out</h2>
+
+      <h3 id="clock">00:00:00 AM</h3>
+
+      <button class="green">Time In</button>
+      <button class="red">Time Out</button>
+    </div>
+
+  </main>
+
+</div>
+
+<script src="employee.js"></script>
+</body>
+</html>

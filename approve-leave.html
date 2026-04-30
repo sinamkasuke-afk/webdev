@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Approve Leave / Reject</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>Admin</h2>
+    <a href="admin.html">Dashboard</a>
+    <a href="attendance-status.html">Attendance List / Status</a>
+    <a href="approve-leave.html" class="active">Approve Leave / Reject</a>
+    <a href="employee-list.html">Employee List</a>
+    <a href="time-record-report.html">Time Record Report</a>
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <main class="content">
+    <h1>Approve Leave / Reject</h1>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th>Employee</th>
+          <th>Leave Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Anna Marie</td>
+          <td>Vacation Leave</td>
+          <td>May 24, 2024</td>
+          <td>May 25, 2024</td>
+          <td>Family vacation</td>
+          <td>
+            <button class="green">Approve</button>
+            <button class="red">Reject</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Pedro Reyes</td>
+          <td>Sick Leave</td>
+          <td>May 22, 2024</td>
+          <td>May 22, 2024</td>
+          <td>Not feeling well</td>
+          <td>
+            <button class="green">Approve</button>
+            <button class="red">Reject</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee List</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>Admin</h2>
+    <a href="admin.html">Dashboard</a>
+    <a href="attendance-status.html">Attendance List / Status</a>
+    <a href="approve-leave.html">Approve Leave / Reject</a>
+    <a href="employee-list.html" class="active">Employee List</a>
+    <a href="time-record-report.html">Time Record Report</a>
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <main class="content">
+    <h1>Employee List</h1>
+
+    <div class="top-actions">
+      <input type="text" placeholder="Search employee...">
+      <button>Add Employee</button>
+    </div>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>001</td>
+          <td>Juan Dela Cruz</td>
+          <td>Software Developer</td>
+          <td>IT Department</td>
+          <td>juan@example.com</td>
+          <td><span class="present">Active</span></td>
+          <td>
+            <button class="blue">Edit</button>
+            <button class="red">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Maria Santos</td>
+          <td>HR Staff</td>
+          <td>HR Department</td>
+          <td>maria@example.com</td>
+          <td><span class="present">Active</span></td>
+          <td>
+            <button class="blue">Edit</button>
+            <button class="red">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

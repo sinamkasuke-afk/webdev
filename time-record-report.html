@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Record Report</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>Admin</h2>
+    <a href="admin.html">Dashboard</a>
+    <a href="attendance-status.html">Attendance List / Status</a>
+    <a href="approve-leave.html">Approve Leave / Reject</a>
+    <a href="employee-list.html">Employee List</a>
+    <a href="time-record-report.html" class="active">Time Record Report</a>
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <main class="content">
+    <h1>Time Record Report</h1>
+
+    <div class="filter-box">
+      <input type="date">
+      <input type="date">
+      <button>Generate Report</button>
+    </div>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th>Employee</th>
+          <th>Date</th>
+          <th>Time In</th>
+          <th>Time Out</th>
+          <th>Total Hours</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Juan Dela Cruz</td>
+          <td>May 21, 2024</td>
+          <td>08:30 AM</td>
+          <td>05:00 PM</td>
+          <td>8h 30m</td>
+          <td><span class="present">Present</span></td>
+        </tr>
+        <tr>
+          <td>Maria Santos</td>
+          <td>May 21, 2024</td>
+          <td>09:15 AM</td>
+          <td>05:30 PM</td>
+          <td>8h 15m</td>
+          <td><span class="late">Late</span></td>
+        </tr>
+      </table>
+
+      <button class="export">Export PDF</button>
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

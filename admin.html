@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Admin</h2>
+
+    <a href="admin.html" class="active">Dashboard</a>
+    <a href="attendance-status.html">Attendance List / Status</a>
+    <a href="approve-leave.html">Approve Leave / Reject</a>
+    <a href="employee-list.html">Employee List</a>
+    <a href="time-record-report.html">Time Record Report</a>
+
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <h1>Admin Dashboard</h1>
+
+    <div class="stats">
+
+      <div class="card">
+        <h2>128</h2>
+        <p>Total Employees</p>
+      </div>
+
+      <div class="card">
+        <h2>96</h2>
+        <p>Present Today</p>
+      </div>
+
+      <div class="card">
+        <h2>20</h2>
+        <p>Absent Today</p>
+      </div>
+
+      <div class="card">
+        <h2>8</h2>
+        <p>Late Today</p>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
