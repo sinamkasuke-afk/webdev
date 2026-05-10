@@ -3,57 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
 <div class="dashboard">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2>Admin</h2>
+    <h2 class="logo">kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span></h2>
 
-    <a href="admin.html" class="active">Dashboard</a>
-    <a href="attendance-status.html">Attendance List / Status</a>
-    <a href="approve-leave.html">Approve Leave / Reject</a>
-    <a href="employee-list.html">Employee List</a>
-    <a href="time-record-report.html">Time Record Report</a>
+    <a href="admin.html" class="active">🏠 Dashboard</a>
+    <a href="attendance-status.html">📋 Attendance List / Status</a>
+    <a href="approve-leave.html">📝 Approve Leave / Reject</a>
+    <a href="employee-list.html">👥 Employee List</a>
+    <a href="time-record-report.html">📊 Time Record Report</a>
 
-    <button onclick="logout()">Log Out</button>
+    <button onclick="openLogout()" class="logout-btn">Log Out</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+      <div>
+        <h4>Admin</h4>
+        <p>Online</p>
+      </div>
+    </div>
   </aside>
 
-  <!-- CONTENT -->
   <main class="content">
-    <h1>Admin Dashboard</h1>
 
-    <div class="stats">
-
-      <div class="card">
-        <h2>128</h2>
-        <p>Total Employees</p>
+    <div class="top-row">
+      <div>
+        <p class="greeting">Welcome back! Here’s what’s happening today.</p>
+        <h1>Admin Dashboard</h1>
       </div>
 
-      <div class="card">
-        <h2>96</h2>
-        <p>Present Today</p>
-      </div>
-
-      <div class="card">
-        <h2>20</h2>
-        <p>Absent Today</p>
-      </div>
-
-      <div class="card">
-        <h2>8</h2>
-        <p>Late Today</p>
-      </div>
-
+      <div class="date-box" id="currentDate">Today</div>
     </div>
+
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon green-bg">👥</div>
+        <div>
+          <p>Total Staff</p>
+          <h2>5</h2>
+          <span>Karinderya workers</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue-bg">✅</div>
+        <div>
+          <p>Present Today</p>
+          <h2>4</h2>
+          <span class="blue-text">Currently working</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange-bg">👤</div>
+        <div>
+          <p>Absent Today</p>
+          <h2>0</h2>
+          <span class="orange-text">No absences</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red-bg">⏰</div>
+        <div>
+          <p>Late Today</p>
+          <h2>1</h2>
+          <span class="red-text">Needs attention</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-grid">
+
+      <div class="overview-card">
+        <div class="card-header">
+          <h2>Today's Attendance Overview</h2>
+          <button class="small-filter">All Work Areas</button>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="donut-chart">
+            <div class="donut-center">
+              <h2>5</h2>
+              <p>Total Staff</p>
+            </div>
+          </div>
+
+          <div class="legend">
+            <p><span class="dot green-dot"></span> Present <b>4</b></p>
+            <p><span class="dot orange-dot"></span> Absent <b>0</b></p>
+            <p><span class="dot red-dot"></span> Late <b>1</b></p>
+          </div>
+        </div>
+
+        <div class="update-note">
+          Data is updated in real-time <span id="lastUpdated">Last updated: --</span>
+        </div>
+      </div>
+
+      <div class="leave-card">
+        <div class="card-header">
+          <h2>Recent Leave Requests</h2>
+          <a href="approve-leave.html">View All</a>
+        </div>
+
+        <div class="leave-item">
+          <div class="leave-icon green-bg">🏝️</div>
+          <div>
+            <h4>Maria Santos</h4>
+            <p>Vacation Leave • <span class="sampleDate" data-offset="12"></span> - <span class="sampleDate" data-offset="15"></span></p>
+          </div>
+          <span class="status-approved">Approved</span>
+        </div>
+
+        <div class="leave-item">
+          <div class="leave-icon orange-bg">🤒</div>
+          <div>
+            <h4>John Cruz</h4>
+            <p>Sick Leave • <span class="sampleDate" data-offset="25"></span> - <span class="sampleDate" data-offset="26"></span></p>
+          </div>
+          <span class="status-pending">Pending</span>
+        </div>
+
+        <div class="leave-item">
+          <div class="leave-icon red-bg">👤</div>
+          <div>
+            <h4>Ana Reyes</h4>
+            <p>Personal Leave • <span class="sampleDate" data-offset="40"></span></p>
+          </div>
+          <span class="status-rejected">Rejected</span>
+        </div>
+
+        <div class="leave-item">
+          <div class="leave-icon green-bg">🏝️</div>
+          <div>
+            <h4>Mark Villanueva</h4>
+            <p>Vacation Leave • <span class="sampleDate" data-offset="55"></span> - <span class="sampleDate" data-offset="58"></span></p>
+          </div>
+          <span class="status-approved">Approved</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="quick-actions">
+      <h2>Quick Actions</h2>
+
+      <div class="quick-grid">
+        <a href="attendance-status.html" class="quick-card green-soft">
+          <div>📋</div>
+          <span>View Attendance</span>
+          <small>Check staff attendance</small>
+        </a>
+
+        <a href="approve-leave.html" class="quick-card orange-soft">
+          <div>📝</div>
+          <span>Approve Leave</span>
+          <small>Review leave requests</small>
+        </a>
+
+        <a href="employee-list.html" class="quick-card blue-soft">
+          <div>👥</div>
+          <span>Employee List</span>
+          <small>Manage staff</small>
+        </a>
+
+        <a href="time-record-report.html" class="quick-card purple-soft">
+          <div>📊</div>
+          <span>Reports</span>
+          <small>View time record reports</small>
+        </a>
+      </div>
+    </section>
 
   </main>
 
 </div>
 
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+
+    <p>
+      You are about to log out from the admin panel.
+      Make sure all attendance and leave records are updated.
+    </p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
 <script src="admin.js"></script>
+
+<script>
+  const today = new Date();
+
+  const dateFormat = {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  document.getElementById("currentDate").textContent =
+    today.toLocaleDateString("en-US", dateFormat);
+
+  document.getElementById("lastUpdated").textContent =
+    "Last updated: " + today.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit"
+    });
+
+  document.querySelectorAll(".sampleDate").forEach(item => {
+    const offset = Number(item.dataset.offset);
+    const date = new Date(today);
+
+    date.setDate(today.getDate() - offset);
+
+    item.textContent = date.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
+  });
+</script>
+
 </body>
 </html>

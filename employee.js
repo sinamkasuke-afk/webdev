@@ -1,15 +1,6 @@
-// CHECK ROLE
 const role = localStorage.getItem("role");
 
-if (role !== "employee") {
-  window.location.href = "homepage.html";
-}
-
-// LOGOUT
-function logout() {
-  localStorage.removeItem("role");
-  window.location.href = "homepage.html";
-}
+console.log("Current role:", role);
 
 // CLOCK
 function updateClock() {
@@ -32,11 +23,16 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// SUBMIT ALERT
-document.querySelectorAll("button").forEach(btn => {
-  if (btn.textContent.includes("Submit")) {
-    btn.addEventListener("click", () => {
-      alert("Request submitted!");
-    });
-  }
-});
+// LOGOUT MODAL
+window.openLogout = function () {
+  document.getElementById("logoutModal").style.display = "flex";
+};
+
+window.closeLogout = function () {
+  document.getElementById("logoutModal").style.display = "none";
+};
+
+window.confirmLogout = function () {
+  localStorage.removeItem("role");
+  window.location.href = "homepage.html";
+};

@@ -3,62 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <title>Attendance List / Status</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
 <div class="dashboard">
+
   <aside class="sidebar">
-    <h2>Admin</h2>
-    <a href="admin.html">Dashboard</a>
-    <a href="attendance-status.html" class="active">Attendance List / Status</a>
-    <a href="approve-leave.html">Approve Leave / Reject</a>
-    <a href="employee-list.html">Employee List</a>
-    <a href="time-record-report.html">Time Record Report</a>
-    <button onclick="logout()">Log Out</button>
+    <h2 class="logo">kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span></h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="attendance-status.html" class="active">📋 Attendance List / Status</a>
+    <a href="approve-leave.html">📝 Approve Leave / Reject</a>
+    <a href="employee-list.html">👥 Employee List</a>
+    <a href="time-record-report.html">📊 Time Record Report</a>
+
+    <button type="button" onclick="openLogout()" class="logout-btn">Log Out</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+      <div>
+        <h4>Admin</h4>
+        <p>Online</p>
+      </div>
+    </div>
   </aside>
 
   <main class="content">
-    <h1>Attendance List / Status</h1>
 
-    <div class="filter-box">
-      <input type="date">
-      <button>Filter</button>
+    <div class="top-row">
+      <div>
+        <p class="greeting">Monitor daily attendance of karinderya staff.</p>
+        <h1>Attendance List / Status</h1>
+      </div>
+
+      <div class="record-actions">
+        <input type="date">
+        <button class="export-btn">Export</button>
+      </div>
     </div>
 
-    <div class="card">
-      <table>
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon green-bg">👥</div>
+        <div>
+          <p>Total Staff</p>
+          <h2>5</h2>
+          <span>All Work Areas</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue-bg">✅</div>
+        <div>
+          <p>Present Today</p>
+          <h2>3</h2>
+          <span class="blue-text">Currently working</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange-bg">🕒</div>
+        <div>
+          <p>Late Today</p>
+          <h2>2</h2>
+          <span class="orange-text">Needs attention</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red-bg">🚫</div>
+        <div>
+          <p>Absent Today</p>
+          <h2>1</h2>
+          <span class="red-text">Not reported</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="attendance-card">
+
+      <div class="filter-row">
+        <input type="text" placeholder="Search staff...">
+
+        <select>
+          <option>All Work Areas</option>
+          <option>Kitchen</option>
+          <option>Counter</option>
+          <option>Dining Area</option>
+          <option>Serving Area</option>
+        </select>
+
+        <select>
+          <option>All Status</option>
+          <option>Present</option>
+          <option>Late</option>
+          <option>Absent</option>
+        </select>
+
+        <input type="date">
+
+        <button>Filter</button>
+      </div>
+
+      <table class="attendance-table">
         <tr>
           <th>Name</th>
+          <th>Work Area</th>
           <th>Status</th>
           <th>Time In</th>
           <th>Time Out</th>
           <th>Total Hours</th>
+          <th>Date</th>
+          <th>Action</th>
         </tr>
+
         <tr>
-          <td>Juan Dela Cruz</td>
-          <td><span class="present">Present</span></td>
+          <td>👨 Juan Dela Cruz</td>
+          <td>Kitchen</td>
+          <td><span class="status-approved">Present</span></td>
           <td>08:30 AM</td>
           <td>05:00 PM</td>
           <td>8h 30m</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
         </tr>
+
         <tr>
-          <td>Maria Santos</td>
-          <td><span class="late">Late</span></td>
+          <td>👩 Maria Santos</td>
+          <td>Counter</td>
+          <td><span class="status-pending">Late</span></td>
           <td>09:15 AM</td>
           <td>05:30 PM</td>
           <td>8h 15m</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
         </tr>
+
         <tr>
-          <td>Anna Marie</td>
-          <td><span class="absent">Absent</span></td>
+          <td>👩 Anna Marie</td>
+          <td>Kitchen</td>
+          <td><span class="status-rejected">Absent</span></td>
           <td>-</td>
           <td>-</td>
           <td>0h</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
+        </tr>
+
+        <tr>
+          <td>👨 Pedro Reyes</td>
+          <td>Serving Area</td>
+          <td><span class="status-approved">Present</span></td>
+          <td>08:45 AM</td>
+          <td>05:15 PM</td>
+          <td>8h 30m</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
+        </tr>
+
+        <tr>
+          <td>👨 Carlos Mendoza</td>
+          <td>Dining Area</td>
+          <td><span class="status-pending">Late</span></td>
+          <td>09:05 AM</td>
+          <td>06:00 PM</td>
+          <td>8h 55m</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
+        </tr>
+
+        <tr>
+          <td>👩 Liza Garcia</td>
+          <td>Serving Area</td>
+          <td><span class="status-approved">Present</span></td>
+          <td>08:20 AM</td>
+          <td>05:00 PM</td>
+          <td>8h 40m</td>
+          <td>May 20, 2025</td>
+          <td>•••</td>
         </tr>
       </table>
-    </div>
+
+      <div class="pagination-row">
+        <p>Showing 1 to 6 of 6 records</p>
+
+        <div class="pages">
+          <button>&lt;</button>
+          <button class="active-page">1</button>
+          <button>&gt;</button>
+        </div>
+      </div>
+
+    </section>
+
   </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+    <p>You are about to log out from the admin panel.</p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
 </div>
 
 <script src="admin.js"></script>

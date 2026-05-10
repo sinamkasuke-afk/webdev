@@ -4,25 +4,19 @@ if (role !== "admin") {
   window.location.href = "homepage.html";
 }
 
-function logout() {
+function openLogout(){
+  document.getElementById("logoutModal").style.display = "flex";
+}
+
+function closeLogout(){
+  document.getElementById("logoutModal").style.display = "none";
+}
+
+function confirmLogout(){
   localStorage.removeItem("role");
   window.location.href = "homepage.html";
 }
 
-document.querySelectorAll(".green").forEach(button => {
-  button.addEventListener("click", function () {
-    alert("Leave request approved!");
-  });
-});
-
-document.querySelectorAll(".red").forEach(button => {
-  button.addEventListener("click", function () {
-    alert("Action completed!");
-  });
-});
-
-document.querySelectorAll(".export").forEach(button => {
-  button.addEventListener("click", function () {
-    alert("PDF export demo only.");
-  });
-});
+function logout(){
+  openLogout();
+}

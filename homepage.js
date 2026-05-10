@@ -1,17 +1,17 @@
-function openLogin() {
+function openLogin(){
   document.getElementById("loginModal").style.display = "flex";
 }
 
-function closeLogin() {
+function closeLogin(){
   document.getElementById("loginModal").style.display = "none";
 }
 
-function loginEmployee() {
+function loginEmployee(){
   localStorage.setItem("role", "employee");
   window.location.href = "employee.html";
 }
 
-function loginAdmin() {
+function loginAdmin(){
   localStorage.setItem("role", "admin");
   window.location.href = "admin.html";
 }

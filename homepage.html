@@ -2,52 +2,277 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>karINderyOUT Homepage</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="homepage.css">
 </head>
+
 <body>
 
+  <!-- NAVBAR -->
+
   <header class="navbar">
-    <h1>kar<span>INdery</span>OUT</h1>
-    <button onclick="openLogin()">Sign In</button>
+
+    <h1>
+      kar<span class="green">IN</span>dery<span class="orange">OUT</span>
+    </h1>
+
+    <button onclick="openLogin()">
+      Sign In
+    </button>
+
   </header>
 
+  <!-- HERO -->
+
   <section class="hero">
-    <div class="hero-text">
-      <h2>Smart Attendance & Leave Management System</h2>
-      <p>
-        A simple web system for employee time in/out, leave requests,
-        attendance monitoring, and admin reports.
-      </p>
-      <button onclick="openLogin()">Get Started</button>
+
+    <!-- LEFT LOGO -->
+
+    <div class="logo-side">
+
+      <img src="logo.png" alt="karINderyOUT Logo">
+
     </div>
 
-    <div class="feature-card">
-      <h3>System Features</h3>
-      <p>✔ Time In / Time Out</p>
-      <p>✔ View Time Records</p>
-      <p>✔ Leave Request</p>
-      <p>✔ Attendance List</p>
-      <p>✔ Employee Reports</p>
+    <!-- RIGHT TEXT -->
+
+    <div class="hero-text">
+
+      <div class="badge">
+        ✦ Modern • Smart • Efficient
+      </div>
+
+      <h2>
+        Smarter <span class="green">Attendance.</span><br>
+        Easier <span class="orange">Leaves.</span><br>
+        Better <span class="green">Workplace.</span>
+      </h2>
+
+      <p>
+        A modern attendance and leave management system that helps
+        you track, manage, and organize employee attendance
+        effortlessly for your karinderya business.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="primary-btn" onclick="openLogin()">
+          Get Started
+        </button>
+
+        <button class="secondary-btn">
+          Watch Demo
+        </button>
+
+      </div>
+
     </div>
+
   </section>
 
-  <div id="loginModal" class="modal">
-    <div class="login-box">
-      <span class="close" onclick="closeLogin()">×</span>
+  <!-- FEATURES -->
 
-      <h2>Sign In</h2>
-      <p>Choose your account type</p>
+  <section class="features">
 
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
+    <div class="feature-box">
 
-      <button onclick="loginEmployee()">Login as Employee</button>
-      <button onclick="loginAdmin()" class="admin-btn">Login as Admin</button>
+      <div class="icon green-icon">
+        ⏰
+      </div>
+
+      <div>
+        <h3>Time Tracking</h3>
+
+        <p>
+          Track employee time in and time out instantly.
+        </p>
+      </div>
+
     </div>
+
+    <div class="feature-box">
+
+      <div class="icon orange-icon">
+        📅
+      </div>
+
+      <div>
+        <h3>Leave Requests</h3>
+
+        <p>
+          Manage leave requests faster and easier.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="feature-box">
+
+      <div class="icon green-icon">
+        📊
+      </div>
+
+      <div>
+        <h3>Reports</h3>
+
+        <p>
+          Generate employee attendance reports anytime.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="feature-box">
+
+      <div class="icon orange-icon">
+        🛡️
+      </div>
+
+      <div>
+        <h3>Secure System</h3>
+
+        <p>
+          Keep attendance records safe and organized.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LOGIN MODAL -->
+
+  <div class="modal" id="loginModal">
+
+    <div class="modern-login">
+
+      <!-- LEFT -->
+
+      <div class="login-left">
+
+        <h1>
+          kar<span class="green">IN</span>dery<span class="orange">OUT</span>
+        </h1>
+
+        <h2>
+          Smart Attendance Starts Here.
+        </h2>
+
+        <p>
+          Sign in to continue managing attendance,
+          leave requests, and employee records.
+        </p>
+
+        <div class="login-feature">
+          ✓ Attendance Monitoring
+        </div>
+
+        <div class="login-feature">
+          ✓ Leave Management
+        </div>
+
+        <div class="login-feature">
+          ✓ Reports & Analytics
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="login-right">
+
+        <span class="close" onclick="closeLogin()">
+          &times;
+        </span>
+
+        <h2>
+          Sign <span class="green">In</span>
+        </h2>
+
+        <p class="login-subtitle">
+          Enter your account credentials
+        </p>
+
+        <div class="input-group">
+          <input type="text" placeholder="Username">
+        </div>
+
+        <div class="input-group">
+          <input type="password" placeholder="Password">
+        </div>
+
+        <div class="remember-row">
+
+          <label>
+            <input type="checkbox">
+            Remember me
+          </label>
+
+          <a href="#">
+            Forgot password?
+          </a>
+
+        </div>
+
+        <button class="employee-btn" onclick="loginEmployee()">
+          Login as Employee
+        </button>
+
+        <button class="admin-btn" onclick="loginAdmin()">
+          Login as Admin
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <script src="homepage.js"></script>
+  <!-- SCRIPT -->
+
+  <script>
+
+    function openLogin(){
+      document.getElementById("loginModal").style.display = "flex";
+    }
+
+    function closeLogin(){
+      document.getElementById("loginModal").style.display = "none";
+    }
+
+    function loginEmployee(){
+
+      localStorage.setItem("role", "employee");
+
+      window.location.href = "employee.html";
+    }
+
+    function loginAdmin(){
+
+      localStorage.setItem("role", "admin");
+
+      window.location.href = "admin.html";
+    }
+
+    window.onclick = function(event){
+
+      const modal = document.getElementById("loginModal");
+
+      if(event.target == modal){
+        modal.style.display = "none";
+      }
+
+    }
+
+  </script>
+
 </body>
 </html>
