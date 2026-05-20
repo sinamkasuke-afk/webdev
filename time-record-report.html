@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Record Report</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+    <h2 class="logo">kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span></h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="attendance-status.html">📋 Attendance List / Status</a>
+    <a href="approve-leave.html">📝 Approve Leave / Reject</a>
+    <a href="employee-list.html">👥 Employee List</a>
+    <a href="time-record-report.html" class="active">📊 Time Record Report</a>
+
+    <button type="button" onclick="openLogout()" class="logout-btn">Log Out</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+      <div>
+        <h4>Admin</h4>
+        <p>Online</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="top-row">
+      <div>
+        <p class="greeting">Generate and review staff attendance reports.</p>
+        <h1>Time Record Report</h1>
+      </div>
+
+      <div class="report-actions">
+        <input type="date">
+        <span>to</span>
+        <input type="date">
+        <button>Generate Report</button>
+      </div>
+    </div>
+
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon green-bg">⏱️</div>
+        <div>
+          <p>Total Hours</p>
+          <h2>16h 45m</h2>
+          <span>Selected period</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue-bg">👥</div>
+        <div>
+          <p>Total Staff</p>
+          <h2>2</h2>
+          <span class="blue-text">Included</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange-bg">🕒</div>
+        <div>
+          <p>Late</p>
+          <h2>1</h2>
+          <span class="orange-text">Needs attention</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red-bg">🚫</div>
+        <div>
+          <p>Absent</p>
+          <h2>0</h2>
+          <span class="red-text">No absent staff</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-grid">
+
+      <div class="report-card">
+        <div class="card-header">
+          <h2>Attendance Overview</h2>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="report-donut">
+            <div class="donut-center">
+              <h2>2</h2>
+              <p>Total Employees</p>
+            </div>
+          </div>
+
+          <div class="legend">
+            <p><span class="dot green-dot"></span> Present <b>1</b></p>
+            <p><span class="dot orange-dot"></span> Late <b>1</b></p>
+            <p><span class="dot red-dot"></span> Absent <b>0</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="card-header">
+          <h2>Daily Working Hours Trend</h2>
+          <button class="small-filter">Total Hours</button>
+        </div>
+
+        <div class="fixed-trend-chart">
+          <svg viewBox="0 0 720 330" class="chart-svg">
+            <line x1="70" y1="35" x2="680" y2="35" class="chart-line"/>
+            <line x1="70" y1="75" x2="680" y2="75" class="chart-line"/>
+            <line x1="70" y1="115" x2="680" y2="115" class="chart-line"/>
+            <line x1="70" y1="155" x2="680" y2="155" class="chart-line"/>
+            <line x1="70" y1="195" x2="680" y2="195" class="chart-line"/>
+            <line x1="70" y1="235" x2="680" y2="235" class="chart-line"/>
+            <line x1="70" y1="275" x2="680" y2="275" class="chart-line"/>
+
+            <text x="25" y="40">12h</text>
+            <text x="25" y="80">10h</text>
+            <text x="33" y="120">8h</text>
+            <text x="33" y="160">6h</text>
+            <text x="33" y="200">4h</text>
+            <text x="33" y="240">2h</text>
+            <text x="33" y="280">0h</text>
+
+            <polyline 
+              points="105,75 195,115 285,155 375,195 465,235 555,275 645,75"
+              fill="none"
+              stroke="#16a34a"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <circle cx="105" cy="75" r="8" class="chart-dot"/>
+            <circle cx="195" cy="115" r="8" class="chart-dot"/>
+            <circle cx="285" cy="155" r="8" class="chart-dot"/>
+            <circle cx="375" cy="195" r="8" class="chart-dot"/>
+            <circle cx="465" cy="235" r="8" class="chart-dot"/>
+            <circle cx="555" cy="275" r="8" class="chart-dot"/>
+            <circle cx="645" cy="75" r="8" class="chart-dot"/>
+
+            <text x="92" y="58" class="value-text">10h</text>
+            <text x="185" y="98" class="value-text">8h</text>
+            <text x="275" y="138" class="value-text">6h</text>
+            <text x="365" y="178" class="value-text">4h</text>
+            <text x="455" y="218" class="value-text">2h</text>
+            <text x="548" y="258" class="value-text">0h</text>
+            <text x="632" y="58" class="value-text">10h</text>
+
+            <text x="82" y="315" class="date-text">May 16</text>
+            <text x="172" y="315" class="date-text">May 17</text>
+            <text x="262" y="315" class="date-text">May 18</text>
+            <text x="352" y="315" class="date-text">May 19</text>
+            <text x="442" y="315" class="date-text">May 20</text>
+            <text x="532" y="315" class="date-text">May 21</text>
+            <text x="622" y="315" class="date-text">May 22</text>
+          </svg>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="report-table-card">
+
+      <div class="report-table-header">
+        <h2>Time Record Details</h2>
+        <button class="export-pdf-btn">📊 Export PDF</button>
+      </div>
+
+      <table class="report-table">
+        <tr>
+          <th>Employee</th>
+          <th>Date</th>
+          <th>Time In</th>
+          <th>Time Out</th>
+          <th>Total Hours</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>👨 Juan Dela Cruz</td>
+          <td>May 21, 2025</td>
+          <td class="green-time">08:30 AM</td>
+          <td class="orange-time">05:00 PM</td>
+          <td>8h 30m</td>
+          <td><span class="status-approved">Present</span></td>
+        </tr>
+
+        <tr>
+          <td>👩 Maria Santos</td>
+          <td>May 21, 2025</td>
+          <td class="green-time">09:15 AM</td>
+          <td class="orange-time">05:30 PM</td>
+          <td>8h 15m</td>
+          <td><span class="status-pending">Late</span></td>
+        </tr>
+      </table>
+
+    </section>
+
+  </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+    <p>You are about to log out from the admin panel.</p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

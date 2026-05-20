@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Approve Leave / Reject</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+    <h2 class="logo">
+      kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span>
+    </h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+
+    <a href="attendance-status.html">
+      📋 Attendance List / Status
+    </a>
+
+    <a href="approve-leave.html" class="active">
+      📝 Approve Leave / Reject
+    </a>
+
+    <a href="employee-list.html">
+      👥 Employee List
+    </a>
+
+    <a href="time-record-report.html">
+      📊 Time Record Report
+    </a>
+
+    <button type="button" onclick="openLogout()" class="logout-btn">Log Out</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+
+      <div>
+        <h4>Admin</h4>
+        <p>Online</p>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="content">
+
+    <div class="top-row">
+
+      <div>
+        <p class="greeting">
+          Review and manage staff leave requests.
+        </p>
+
+        <h1>Approve Leave / Reject</h1>
+      </div>
+
+      <div class="record-actions">
+        <input type="date">
+
+        <select>
+          <option>All Status</option>
+          <option>Pending</option>
+          <option>Approved</option>
+          <option>Rejected</option>
+        </select>
+      </div>
+
+    </div>
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <div class="stat-icon green-bg">📄</div>
+
+        <div>
+          <p>Total Requests</p>
+          <h2>12</h2>
+          <span>This Month</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange-bg">🕒</div>
+
+        <div>
+          <p>Pending Requests</p>
+          <h2>4</h2>
+          <span class="orange-text">Awaiting Approval</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon green-bg">✅</div>
+
+        <div>
+          <p>Approved</p>
+          <h2>6</h2>
+          <span class="green-text">This Month</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red-bg">❌</div>
+
+        <div>
+          <p>Rejected</p>
+          <h2>2</h2>
+          <span class="red-text">This Month</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="attendance-card">
+
+      <div class="leave-tabs">
+
+        <button class="tab-active">
+          All Requests
+        </button>
+
+        <button>
+          Pending
+        </button>
+
+        <button>
+          Approved
+        </button>
+
+        <button>
+          Rejected
+        </button>
+
+      </div>
+
+      <table class="attendance-table">
+
+        <tr>
+          <th>Employee</th>
+          <th>Leave Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Applied On</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>👩 Anna Marie</td>
+          <td>Vacation Leave</td>
+          <td>May 24, 2025</td>
+          <td>May 25, 2025</td>
+          <td>Family vacation out of town.</td>
+          <td>May 20, 2025</td>
+
+          <td>
+            <span class="status-pending">Pending</span>
+          </td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>👨 Pedro Reyes</td>
+          <td>Sick Leave</td>
+          <td>May 22, 2025</td>
+          <td>May 22, 2025</td>
+          <td>Not feeling well.</td>
+          <td>May 20, 2025</td>
+
+          <td>
+            <span class="status-pending">Pending</span>
+          </td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>👩 Maria Santos</td>
+          <td>Personal Leave</td>
+          <td>May 21, 2025</td>
+          <td>May 21, 2025</td>
+          <td>Personal matters.</td>
+          <td>May 19, 2025</td>
+
+          <td>
+            <span class="status-approved">Approved</span>
+          </td>
+
+          <td class="no-action">—</td>
+        </tr>
+
+        <tr>
+          <td>👨 John Cruz</td>
+          <td>Vacation Leave</td>
+          <td>May 18, 2025</td>
+          <td>May 20, 2025</td>
+          <td>Short family trip.</td>
+          <td>May 18, 2025</td>
+
+          <td>
+            <span class="status-approved">Approved</span>
+          </td>
+
+          <td class="no-action">—</td>
+        </tr>
+
+        <tr>
+          <td>👩 Liza Garcia</td>
+          <td>Sick Leave</td>
+          <td>May 15, 2025</td>
+          <td>May 16, 2025</td>
+          <td>Doctor check-up and recovery.</td>
+          <td>May 15, 2025</td>
+
+          <td>
+            <span class="status-rejected">Rejected</span>
+          </td>
+
+          <td class="no-action">—</td>
+        </tr>
+
+      </table>
+
+      <div class="pagination-row">
+
+        <p>
+          Showing 1 to 5 of 12 requests
+        </p>
+
+        <div class="pages">
+          <button>&lt;</button>
+          <button class="active-page">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>&gt;</button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+    <p>You are about to log out from the admin panel.</p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

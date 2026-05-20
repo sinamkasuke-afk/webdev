@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Request</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+    <h2 class="logo">kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span></h2>
+
+    <a href="employee.html">⏰ Time In / Time Out</a>
+    <a href="view-records.html">📋 View Time Records</a>
+    <a href="leave-request.html" class="active">📅 Leave Request</a>
+
+    <button type="button" onclick="openLogout()" class="logout-btn">Log Out</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+      <div>
+        <h4>Employee</h4>
+        <p>Online</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="top-row">
+      <div>
+        <p class="greeting">Submit and monitor your leave requests easily.</p>
+        <h1>Leave Request</h1>
+      </div>
+
+      <div class="date-box">May 20, 2025</div>
+    </div>
+
+    <section class="leave-stats">
+
+      <div class="leave-stat">
+        <div class="stat-icon green-bg">📅</div>
+        <div>
+          <p>Total Leaves Requested</p>
+          <h2>8</h2>
+          <span>This Year</span>
+        </div>
+      </div>
+
+      <div class="leave-stat">
+        <div class="stat-icon orange-bg">⏳</div>
+        <div>
+          <p>Pending Requests</p>
+          <h2>2</h2>
+          <span class="orange-text">Awaiting Approval</span>
+        </div>
+      </div>
+
+      <div class="leave-stat">
+        <div class="stat-icon blue-bg">✅</div>
+        <div>
+          <p>Approved Leaves</p>
+          <h2>5</h2>
+          <span class="blue-text">This Year</span>
+        </div>
+      </div>
+
+      <div class="leave-stat">
+        <div class="stat-icon red-bg">❌</div>
+        <div>
+          <p>Rejected Leaves</p>
+          <h2>1</h2>
+          <span class="red-text">This Year</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="leave-form-card">
+      <h2>Submit Leave Request</h2>
+
+      <div class="form-group">
+        <label>Leave Type</label>
+        <input type="text" placeholder="Leave Type (Vacation, Sick Leave, Personal, etc.)">
+      </div>
+
+      <div class="date-grid">
+        <div class="form-group">
+          <label>Start Date</label>
+          <input type="date">
+        </div>
+
+        <div class="form-group">
+          <label>End Date</label>
+          <input type="date">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Reason</label>
+        <textarea placeholder="Write your reason here..."></textarea>
+      </div>
+
+      <button class="submit-leave">Submit Request</button>
+    </section>
+
+    <section class="leave-table-card">
+      <div class="records-header">
+        <h2>My Leave Requests</h2>
+        <p>Showing 1 to 4 of 4 requests</p>
+      </div>
+
+      <table class="leave-table">
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Applied On</th>
+        </tr>
+
+        <tr>
+          <td>🏝️ Vacation Leave</td>
+          <td>May 25, 2024</td>
+          <td>May 28, 2024</td>
+          <td>Family vacation</td>
+          <td><span class="status-approved">Approved</span></td>
+          <td>May 10, 2024</td>
+        </tr>
+
+        <tr>
+          <td>🤒 Sick Leave</td>
+          <td>May 14, 2024</td>
+          <td>May 15, 2024</td>
+          <td>Not feeling well</td>
+          <td><span class="status-pending">Pending</span></td>
+          <td>May 12, 2024</td>
+        </tr>
+
+        <tr>
+          <td>👤 Personal Leave</td>
+          <td>Apr 30, 2024</td>
+          <td>Apr 30, 2024</td>
+          <td>Personal matters</td>
+          <td><span class="status-rejected">Rejected</span></td>
+          <td>Apr 28, 2024</td>
+        </tr>
+
+        <tr>
+          <td>🏝️ Vacation Leave</td>
+          <td>Apr 10, 2024</td>
+          <td>Apr 15, 2024</td>
+          <td>Out of town trip</td>
+          <td><span class="status-approved">Approved</span></td>
+          <td>Apr 01, 2024</td>
+        </tr>
+      </table>
+    </section>
+
+  </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+    <p>You are about to log out from the admin panel.</p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="employee.js"></script>
+</body>
+</html>

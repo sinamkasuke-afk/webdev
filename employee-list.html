@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee List</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <h2 class="logo">
+      kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span>
+    </h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="attendance-status.html">📅 Attendance List / Status</a>
+    <a href="approve-leave.html">📝 Approve Leave / Reject</a>
+    <a href="employee-list.html" class="active">👥 Employee List</a>
+    <a href="time-record-report.html">📊 Time Record Report</a>
+
+    <button type="button" onclick="openLogout()" class="logout-btn">Log Out</button>
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+
+      <div>
+        <h4>Admin</h4>
+        <p>Online</p>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="top-row">
+
+      <div>
+        <p class="greeting">Manage and monitor karinderya staff.</p>
+        <h1>Employee List</h1>
+      </div>
+
+      <button class="add-btn">+ Add Staff</button>
+
+    </div>
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <div class="stat-icon green-bg">👥</div>
+
+        <div>
+          <p>Total Staff</p>
+          <h2>5</h2>
+          <span>All workers</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue-bg">✅</div>
+
+        <div>
+          <p>Active Staff</p>
+          <h2>4</h2>
+          <span class="blue-text">Currently working</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange-bg">🍳</div>
+
+        <div>
+          <p>Kitchen Staff</p>
+          <h2>2</h2>
+          <span class="orange-text">Cooking area</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red-bg">🛎️</div>
+
+        <div>
+          <p>Service Staff</p>
+          <h2>3</h2>
+          <span class="red-text">Serving area</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- EMPLOYEE CARD -->
+    <section class="employee-card">
+
+      <div class="employee-filters">
+
+        <input type="text" placeholder="Search staff...">
+
+        <select>
+          <option>All Roles</option>
+          <option>Cook</option>
+          <option>Cashier</option>
+          <option>Server</option>
+          <option>Kitchen Helper</option>
+        </select>
+
+        <select>
+          <option>All Status</option>
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
+
+        <button>Filter</button>
+
+      </div>
+
+      <!-- TABLE -->
+      <table class="employee-table">
+
+        <tr>
+          <th>ID</th>
+          <th>Staff Name</th>
+          <th>Role</th>
+          <th>Work Area</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>001</td>
+          <td>👨 Juan Dela Cruz</td>
+          <td>Cook</td>
+          <td>Kitchen</td>
+          <td>0912-345-6789</td>
+
+          <td>
+            <span class="status-approved">Active</span>
+          </td>
+
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>002</td>
+          <td>👩 Maria Santos</td>
+          <td>Cashier</td>
+          <td>Counter</td>
+          <td>0923-456-7890</td>
+
+          <td>
+            <span class="status-approved">Active</span>
+          </td>
+
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>003</td>
+          <td>👨 Pedro Reyes</td>
+          <td>Server</td>
+          <td>Dining Area</td>
+          <td>0934-567-8901</td>
+
+          <td>
+            <span class="status-approved">Active</span>
+          </td>
+
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>004</td>
+          <td>👩 Anna Marie</td>
+          <td>Kitchen Helper</td>
+          <td>Kitchen</td>
+          <td>0945-678-9012</td>
+
+          <td>
+            <span class="status-rejected">Inactive</span>
+          </td>
+
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>005</td>
+          <td>👨 Mark Villanueva</td>
+          <td>Server</td>
+          <td>Dining Area</td>
+          <td>0956-789-0123</td>
+
+          <td>
+            <span class="status-approved">Active</span>
+          </td>
+
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+      </table>
+
+      <!-- PAGINATION -->
+      <div class="pagination-row">
+
+        <p>Showing 1 to 5 of 5 staff</p>
+
+        <div class="pages">
+          <button>&lt;</button>
+          <button class="active-page">1</button>
+          <button>&gt;</button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <span class="logout-close" onclick="closeLogout()">&times;</span>
+    <div class="logout-icon">🔒</div>
+
+    <h2>Leave Admin Dashboard?</h2>
+    <p>You are about to log out from the admin panel.</p>
+
+    <div class="logout-buttons">
+      <button class="cancel-btn" onclick="closeLogout()">Cancel</button>
+      <button class="confirm-logout" onclick="confirmLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

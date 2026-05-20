@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+    <h2 class="logo">kar<span class="green-text">IN</span>dery<span class="orange-text">OUT</span></h2>
+
+    <a href="employee.html" class="active">⏰ Time In / Time Out</a>
+    <a href="view-records.html">📋 View Time Records</a>
+    <a href="leave-request.html">📅 Leave Request</a>
+
+<button type="button" onclick="openLogout()" class="logout-btn">
+  Log Out
+</button>
+
+    <div class="profile-box">
+      <div class="avatar">👤</div>
+      <div>
+        <h4>Employee</h4>
+        <p>Online</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="top-row">
+      <div>
+        <p class="greeting" id="employeeGreeting">Good day!</p>
+        <h1>Employee Dashboard</h1>
+      </div>
+
+      <div class="date-box" id="currentDate">Today</div>
+    </div>
+
+    <section class="hero-card">
+      <div>
+        <h2>Track your time. Stay productive.</h2>
+        <p>Manage your attendance efficiently.</p>
+      </div>
+
+      <div class="hero-icon">🕒</div>
+    </section>
+
+    <section class="main-grid">
+
+      <div class="time-card">
+        <div class="circle-clock">
+
+          <div class="clock-icon">⏰</div>
+
+          <p>Current Time</p>
+
+          <h2 id="clock">00:00:00 AM</h2>
+
+          <small id="todayLabel">Today</small>
+
+          <div class="btn-row">
+            <button class="green">Time In</button>
+            <button class="orange">Time Out</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="activity-card">
+
+        <div class="card-header">
+          <h2>Recent Activity</h2>
+          <a href="view-records.html">View All</a>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon green-bg">✅</div>
+          <div>
+            <h4>Ready for Time In</h4>
+            <p id="readyDate">Click Time In to start your work record.</p>
+          </div>
+          <span class="status green-status">Active</span>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon orange-bg">📅</div>
+          <div>
+            <h4>Leave Request</h4>
+            <p>You can submit a leave request anytime this year.</p>
+          </div>
+          <span class="status orange-status">Open</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<div class="logout-modal" id="logoutModal">
+
+  <div class="logout-box">
+
+    <span class="logout-close" onclick="closeLogout()">
+      &times;
+    </span>
+
+    <div class="logout-icon">
+      ⏰
+    </div>
+
+    <h2>
+      End Work Session?
+    </h2>
+
+    <p>
+      You're about to leave your employee dashboard.
+      Don’t forget to complete your time records before logging out.
+    </p>
+
+    <div class="logout-buttons">
+
+      <button class="cancel-btn" onclick="closeLogout()">
+        Cancel
+      </button>
+
+      <button class="confirm-logout" onclick="confirmLogout()">
+        Log Out
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="employee.js"></script>
+
+<script>
+  const today = new Date();
+
+  const dateFormat = {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const hour = today.getHours();
+  let greeting = "Good day!";
+
+  if (hour < 12) {
+    greeting = "Good morning!";
+  } else if (hour < 18) {
+    greeting = "Good afternoon!";
+  } else {
+    greeting = "Good evening!";
+  }
+
+  document.getElementById("employeeGreeting").textContent = greeting;
+
+  document.getElementById("currentDate").textContent =
+    today.toLocaleDateString("en-US", dateFormat);
+
+  document.getElementById("todayLabel").textContent =
+    today.toLocaleDateString("en-US", dateFormat);
+
+  document.getElementById("readyDate").textContent =
+    "Today is " + today.toLocaleDateString("en-US", dateFormat) + ". Click Time In to start your work record.";
+</script>
+
+</body>
+</html>
